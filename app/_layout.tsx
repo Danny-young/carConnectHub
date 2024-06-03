@@ -30,6 +30,11 @@ export default function RootLayout() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="(modals)/login" options={{
+          presentation:'modal', 
+          title: 'LogIn or Signup' }} />
+          <Stack.Screen name="listing/[id]" options={{ headerTitle: '' }} />
+          <Stack.Screen name="(modals)/booking" options={{ presentation: 'transparentModal', animation:'fade' }} />
         <Stack.Screen name="+not-found" />
       </Stack>
     </ThemeProvider>
