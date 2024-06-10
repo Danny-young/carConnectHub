@@ -1,20 +1,28 @@
-import { Image, StyleSheet, Platform, View, SafeAreaView } from 'react-native';
+import { Image, StyleSheet, Platform, View, SafeAreaView, Text } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { Link } from 'expo-router';
+import { Link, Stack } from 'expo-router';
+import ExploreHeader from '@/components/ExploreHeader';
+import Listings from '@/components/Listings';
+import { useMemo, useState } from 'react';
+import listingsData from '@/assets/data/air-bnb-listings.json';
 
 export default function HomeScreen() {
+  const [category, setCategory] = useState<string>('Tiny homes');
+ 
+ const items = useMemo(() => listingsData as any, []);
+  const onDataChanged = (category: string) => {
+    setCategory(category);
+  };
   return (
-    <SafeAreaView style={{flex:1, margin:50}}>
-    <View>
-     <Link href={'/(modals)/login'}>Login</Link>
-     <Link href={'/(modals)/booking'}>booking</Link>
-     <Link href={'/listing/234'}>Login details</Link>
+    <View style={{flex:1, marginTop:40}}>
+    <ExploreHeader onCategoryChanged={onDataChanged}/>
+    <Listings listings={items} category={category} />
     </View>
-    </SafeAreaView>
+   
   );
 };
 
