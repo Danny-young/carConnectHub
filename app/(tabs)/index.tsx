@@ -6,9 +6,9 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { Link, Stack } from 'expo-router';
 import ExploreHeader from '@/components/ExploreHeader';
-import Listings from '@/components/Listings';
+import Listings from '@/components/Listing';
 import { useMemo, useState } from 'react';
-import listingsData from '@/assets/data/air-bnb-listings.json';
+import listingsData from '@/assets/data/airbnb-listings.json';
 
 export default function HomeScreen() {
   const [category, setCategory] = useState<string>('Tiny homes');

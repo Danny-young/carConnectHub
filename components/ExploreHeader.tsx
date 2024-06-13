@@ -57,7 +57,7 @@ const scrollRef = useRef<ScrollView>(null);
 };
 
   return (
-    <SafeAreaView style={{flex:1}}>
+    <SafeAreaView>
 
       <View style={styles.container}>
         <View style={styles.actionRow}>
