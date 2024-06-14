@@ -5,6 +5,7 @@ import { Link } from 'expo-router';
 import { Listing } from '@/interfaces/listing';
 import { TabBarIcon } from './navigation/TabBarIcon';
 import { Ionicons } from '@expo/vector-icons';
+import Animated, { FadeInLeft, FadeInRight } from 'react-native-reanimated';
 
 interface Props {
   listings: any[];
@@ -28,7 +29,7 @@ const Listings = ({ listings: items, category }: Props) => {
   const renderRow: ListRenderItem<Listing> = ({ item }) => (
     <Link href={`/listing/${item.id}`} asChild>
     <TouchableOpacity>
-      <View style={styles.listing}>
+      <Animated.View style={styles.listing} entering={FadeInRight} exiting={FadeInLeft}>
          <Image source={{uri: item.medium_url}} style={styles.image}/>
          <TouchableOpacity  style={{position: 'absolute', right:30, top:30}}>
           <TabBarIcon name='heart-outline'/>
@@ -48,7 +49,7 @@ const Listings = ({ listings: items, category }: Props) => {
           <Text style={{fontFamily: 'SpaceMono'}}>Ghc {item.price}</Text>
           <Text style={{fontFamily: 'SpaceMono'}}>night</Text>
          </View>
-      </View>
+      </Animated.View>
     </TouchableOpacity>
     </Link>
   );

@@ -43,6 +43,7 @@ export interface Listing {
     host_acceptance_rate: number;
     host_is_superhost: boolean;
     host_thumbnail_url: string;
+    xl_picture_url: string;
 }
 
 
