@@ -1,6 +1,12 @@
 
 
 export interface Listing {
+    type: string;
+    geometry: string;
+    properties: Properties;
+}
+
+interface Properties {
     id: string;
     listing_url: string;
     scrape_id: string;

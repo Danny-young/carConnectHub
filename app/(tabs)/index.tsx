@@ -6,9 +6,12 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { Link, Stack } from 'expo-router';
 import ExploreHeader from '@/components/ExploreHeader';
-import Listings from '@/components/Listing';
 import { useMemo, useState } from 'react';
+import listingsDataGeo from '@/assets/data/airbnb-listings.geo.json';
 import listingsData from '@/assets/data/airbnb-listings.json';
+import ListingsMaps from '@/components/ListingsMaps';
+import Listings from '@/components/Listings';
+
 
 export default function HomeScreen() {
   const [category, setCategory] = useState<string>('Tiny homes');
@@ -21,6 +24,8 @@ export default function HomeScreen() {
     <View style={{flex:1, marginTop:40}}>
     <ExploreHeader onCategoryChanged={onDataChanged}/>
     <Listings listings={items} category={category} />
+{/* 
+    <ListingsMaps listings={listingsDataGeo}/> */}
     </View>
    
   );

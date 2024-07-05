@@ -3,7 +3,7 @@ import React, { useLayoutEffect } from 'react';
 import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity, Share } from 'react-native';
 import listingsData from '@/assets/data/airbnb-listings.json';
 import { Ionicons } from '@expo/vector-icons';
-import Colors from '@/constants/Custom';
+import Custom from '@/constants/Custom';
 import Animated, {
   SlideInDown,
   interpolate,
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
   },
   rooms: {
     fontSize: 16,
-    color: Colors.grey,
+    color: Custom.grey,
     marginVertical: 4,
     fontFamily: 'mon',
   },
@@ -180,14 +180,14 @@ const styles = StyleSheet.create({
   },
   divider: {
     height: StyleSheet.hairlineWidth,
-    backgroundColor: Colors.grey,
+    backgroundColor: Custom.grey,
     marginVertical: 16,
   },
   host: {
     width: 50,
     height: 50,
     borderRadius: 50,
-    backgroundColor: Colors.grey,
+    backgroundColor: Custom.grey,
   },
   hostView: {
     flexDirection: 'row',
@@ -212,7 +212,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
-    color: Colors.primary,
+    color: Custom.primary,
   },
   bar: {
     flexDirection: 'row',
@@ -224,7 +224,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     height: 100,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderColor: Colors.grey,
+    borderColor: Custom.grey,
   },
 
   description: {
@@ -235,4 +235,3 @@ const styles = StyleSheet.create({
 });
 
 export default DetailsPage;
-

@@ -21,6 +21,24 @@ export const defaultStyles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  pillButton: {
+    padding: 10,
+    height: 60,
+    borderRadius: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  descriptionText: {
+    fontSize: 18,
+    marginTop: 20,
+    color: Colors.grey,
+  },
+  header: {
+    fontSize: 40,
+    fontWeight: '700',
+  },
+  
+
   btnText: {
     color: '#fff',
     fontSize: 16,
